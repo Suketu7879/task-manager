@@ -1,7 +1,11 @@
 import jwt from "jsonwebtoken";
 
 const authMiddleware = (req, res, next) => {
-  const token = req.headers.authorization.split(" ")[1].toString();
+  // const token = req.headers.authorization.split(" ")[1].toString();
+  const authHeader =
+    req.headers.authorization || req.headers["x-forwarded-authorization"];
+  const token = authHeader ? authHeader.split(" ")[1] : null;
+
   // console.log(token);
   if (!token) return res.status(401).json({ message: "Access denied" });
 
