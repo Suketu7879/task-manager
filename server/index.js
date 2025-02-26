@@ -8,7 +8,14 @@ import taskRoutes from "./routes/task.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.options("*", cors());
+app.use(
+  cors({
+    origin: "https://task-manager-chi-coral.vercel.app",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 
 mongoose
   .connect(process.env.MONGO_URI)
