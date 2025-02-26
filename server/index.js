@@ -10,13 +10,7 @@ const app = express();
 app.use(express.json());
 app.options("*", cors());
 
-app.use(
-  cors({
-    origin: "https://task-manager-chi-coral.vercel.app",
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization",
-  })
-);
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URI)
