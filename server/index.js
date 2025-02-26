@@ -11,10 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose
-    .connect(process.env.MONGO_URI)
-//   .connect(
-//     "mongodb+srv://suketurola4:srola96none@vscode.qfyvt.mongodb.net/TaskManager"
-//   )
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("connected"))
   .catch((err) => console.log(err));
 
