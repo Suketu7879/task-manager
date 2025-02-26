@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://task-manager-api-2loc.onrender.com/api";
+const API_URL = "https://task-manager-zcy8.onrender.com/api";
 
 export const register = (userData) =>
   axios.post(`${API_URL}/auth/register`, userData);
