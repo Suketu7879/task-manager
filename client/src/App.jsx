@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard"; // Home Page after login
+import Dashboard from "./pages/Dashboard"; 
 
 const App = () => {
   return (
@@ -9,8 +9,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} /> {/* Redirect "/" to Login */}
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />{" "}
-        {/* Protected Route */}
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

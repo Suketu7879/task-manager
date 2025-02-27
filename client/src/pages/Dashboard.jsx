@@ -2,6 +2,7 @@ import { useState } from "react";
 import TaskList from "../components/TaskList";
 import TaskForm from "../components/TaskForm";
 import { useNavigate } from "react-router-dom";
+import { CiLogout } from "react-icons/ci";
 
 const Dashboard = () => {
   const token = localStorage.getItem("token");
@@ -20,10 +21,14 @@ const Dashboard = () => {
           <div className="flex flex-col gap-2 md:w-[33%] bg-purple-50 rounded-lg shadow p-2 relative">
             <button
               onClick={logout}
-              className="w-30 mt-4 p-3 bg-purple-500 shadow-md shadow-purple-900 text-white font-semibold rounded-lg hover:bg-purple-600 transition duration-200 absolute bottom-2 left-2"
+              className="w-30 mt-4 p-3 bg-purple-500 shadow-md shadow-purple-900 text-white font-semibold rounded-lg hover:bg-purple-600 transition duration-200 absolute md:bottom-2 md:left-2 hidden md:block"
             >
-              Logout
+              <span>Logout </span>
             </button>
+            <span>
+              <CiLogout className="md:hidden scale-125 text-purple-600" onClick={logout} />
+            </span>
+
             <h2 className="text-3xl font-bold text-center bg-gradient-to-br from-purple-700 to-purple-300 bg-clip-text text-transparent mb-4">
               Dashboard
             </h2>

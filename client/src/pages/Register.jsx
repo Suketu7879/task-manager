@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await register(form);
-    navigate("/login");
+    navigate("/");
   };
 
   const HandleLogin = () => {

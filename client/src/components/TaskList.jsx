@@ -28,22 +28,24 @@ const TaskList = ({ token, onEdit }) => {
       {tasks.map((task, index) => (
         <div
           key={index}
-          className="p-2 mt-2 border-t group hover:bg-purple-600 hover:scale-[1.01] rounded-md transition-all duration-200"
+          className="p-2 mt-2 border-t group hover:bg-purple-400 hover:scale-[1.01] rounded-md transition-all duration-200"
         >
-          <h3 className="text-lg font-semibold text-gray-600 transition-all duration-200 group-hover:text-gray-50">
+          <h3 className="text-xl font-semibold text-black transition-all duration-200 group-hover:text-white">
             {task.title}
           </h3>
-          <p className="text-gray-400 transition-all duration-200 group-hover:text-gray-200">{task.description}</p>
-          <div className="mt-1 flex gap-2 justify-end">
+          <p className="text-black transition-all duration-200 group-hover:text-gray-50">
+            {task.description}
+          </p>
+          <div className="mt-1 flex gap-4 justify-end">
             <button
               onClick={() => onEdit(task)}
-              className="bg-purple-400 rounded-xs w-20 text-white"
+              className="bg-purple-600 rounded-sm w-20 text-white scale-110"
             >
               Edit
             </button>
             <button
               onClick={() => handleDelete(task._id)}
-              className="bg-purple-400 rounded-xs w-20 text-white"
+              className="bg-purple-600 rounded-sm w-20 text-white scale-110"
             >
               Delete
             </button>
